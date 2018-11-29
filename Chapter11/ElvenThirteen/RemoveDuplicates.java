@@ -4,7 +4,7 @@
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 11-13
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Remove duplicates) Write a method that removes the duplicate
  *          elements from an array list of integers using the following header:
  *          public static void removeDuplicate(ArrayList<Integer> list) Write a
@@ -24,5 +24,5 @@ import java.util.Scanner;
 
 public class ElevenThirteen {
 	public static void main(String[] args) {
-}
+	}
 }

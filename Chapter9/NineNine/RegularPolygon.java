@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 9-9
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Geometry: n-sided regular polygon) In an n-sided regular polygon,
  *          all sides have the same length and all angles have the same degree
  *          (i.e., the polygon is both equilateral and equiangular). Design a

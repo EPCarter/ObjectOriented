@@ -3,7 +3,7 @@
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 14-28
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Random time) Modify the ClockPane class with three new Boolean
  *          properties— hourHandVisible, minuteHandVisible, and
  *          secondHandVisible—and their associated accessor and mutator methods.

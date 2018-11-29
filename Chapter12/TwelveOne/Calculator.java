@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 12-1
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (NumberFormatException) Listing 7.9, Calculator.java, is a simple
  *          commandline calculator. Note that the program terminates if any
  *          operand is nonnumeric. Write a program with an exception handler
@@ -18,5 +18,5 @@ import java.util.regex.Pattern;
  **/
 class Calculator {
 	public static void main(String[] args) {
-}
+	}
 }

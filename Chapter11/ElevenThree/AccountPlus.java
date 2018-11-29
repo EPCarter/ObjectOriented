@@ -3,7 +3,7 @@
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 11-3
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Subclasses of Account) In Programming Exercise 9.7, the Account
  *          class was defined to model a bank account. An account has the
  *          properties account number, balance, annual interest rate, and date

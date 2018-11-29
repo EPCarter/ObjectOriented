@@ -3,7 +3,7 @@
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 15-3
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Move the ball) Write a program that moves the ball in a pane. You
  *          should define a pane class for displaying the ball and provide the
  *          methods for moving the ball left, right, up, and down, as shown in

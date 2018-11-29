@@ -3,7 +3,7 @@
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 16-27
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary 7 (Display country flag and flag description) Listing 16.4,
  *          ComboBoxDemo.java, gives a program that lets the user view a
  *          country’s flag image and description by selecting the country from a

@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 9-1
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (The Rectangle class) Following the example of the Circle class in
  *          Section 9.2, design a class named Rectangle to represent a
  *          rectangle. The class contains:
@@ -24,6 +24,6 @@ import java.util.Scanner;
  **/
 class Rectangle {
 	public static void main(String[] args) {
-		
+
 	}
 }

@@ -3,7 +3,7 @@
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 17-14/15
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Encrypt files) Encode the file by adding 5 to every byte in the
  *          file. Write a program that prompts the user to enter an input file
  *          name and an output file name and saves the encrypted version of the

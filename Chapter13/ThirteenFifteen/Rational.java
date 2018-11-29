@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 13-15
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Use BigInteger for the Rational class) Redesign and implement the
  *          Rational class in Listing 13.13 using BigInteger for the numerator
  *          and denominator.

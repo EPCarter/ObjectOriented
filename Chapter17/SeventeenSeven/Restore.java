@@ -3,7 +3,7 @@
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 17-7
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Restore objects from a file) Suppose a file named Exercise17_07.dat
  *          has been created using the ObjectOutputStream. The file contains
  *          Loan objects. The Loan class in Listing 10.2 does not implement

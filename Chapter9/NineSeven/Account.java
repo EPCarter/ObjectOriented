@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 9-7
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (The Account class) Design a class named Account that contains:
  * 
  *          A private int data field named id for the account (default 0). A

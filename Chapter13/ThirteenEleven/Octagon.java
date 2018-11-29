@@ -3,7 +3,7 @@
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 13-11
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (The Octagon class) Write a class named Octagon that extends
  *          GeometricObject and implements the Comparable and Cloneable
  *          interfaces. Assume that all eight sides of the octagon are of equal

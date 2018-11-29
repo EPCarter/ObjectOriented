@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 10-25
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (New string split method) The split method in the String class
  *          returns an array of strings consisting of the substrings split by
  *          the delimiters. However, the delimiters are not returned. Implement

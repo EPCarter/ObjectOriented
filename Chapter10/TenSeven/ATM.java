@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 10-
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Game: ATM machine) Use the Account class created in Programming
  *          Exercise 9.7 to simulate an ATM machine. Create ten accounts in an
  *          array with id 0, 1,..., 9, and initial balance $100.
@@ -23,5 +23,5 @@ import java.util.Scanner;
  **/
 class Atm {
 	public static void main(String[] args) {
-}
+	}
 }

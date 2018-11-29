@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 13-1
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (Triangle class) Design a new Triangle class that extends the
  *          abstract GeometricObject class.
  * 
@@ -22,7 +22,7 @@ class Triangle {
 	public static void main(String[] args) {
 
 	}
-	
+
 	public static String getInput() {
 		Scanner reader = new Scanner(System.in);
 		String input = reader.nextLine();

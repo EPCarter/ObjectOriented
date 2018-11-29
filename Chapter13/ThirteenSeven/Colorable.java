@@ -3,7 +3,7 @@
  * @email Carter.Eri7200@stu.stech.edu
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 13-7
- * @date Oct. 24, 2018
+ * @date Nov. 29, 2018
  * @summary (The Colorable interface) Design an interface named Colorable with a
  *          void method named howToColor(). Every class of a colorable object
  *          must implement the Colorable interface.
@@ -21,7 +21,7 @@ class Colorable {
 	public static void main(String[] args) {
 
 	}
-	
+
 	public static void howToColor() {
 		System.out.println("Color all four sides.");
 	}
