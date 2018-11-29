@@ -1,0 +1,121 @@
+
+/**
+ * @author: Erik Carter
+ * @email Carter.Eri7200@stu.stech.edu
+ * @course CSCI 1110 - Object Oriented Programming
+ * @assignment 11-13
+ * @date Oct. 24, 2018
+ * @summary (Remove duplicates) Write a method that removes the duplicate
+ *          elements from an array list of integers using the following header:
+ *          public static void removeDuplicate(ArrayList<Integer> list) Write a
+ *          test program that prompts the user to enter 10 integers to a list
+ *          and displays the distinct integers separated by exactly one space.
+ *          Here is a sample run:
+ * 
+ *          Enter ten integers: 34 5 3 5 6 4 33 2 2 4
+ * 
+ *          The distinct integers are: 34 5 3 6 4 33 2
+ **/
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+@SuppressWarnings("resource")
+
+public class ElevenThirteen {
+	public static void main(String[] args) {
+		System.out.println("Enter ten integers: ");
+		ArrayList<Integer> data = new ArrayList<>();
+		data = removeDuplicate(importer(getInput(), data));
+		System.out.println(cleaner(data.toString()));
+	}
+
+	public static String testMethod(String input) {
+		ArrayList<Integer> data2 = new ArrayList<>();
+		data2 = removeDuplicate(importer(input, data2));
+		input = cleaner(data2.toString());
+		return input;
+	}
+
+	public static String getInput() {
+		Scanner reader = new Scanner(System.in);
+		String input = "";
+		input = cleaner(reader.nextLine());
+		return input;
+	}
+
+	public static void more(ArrayList<Integer> data) {
+		int j = data.size();
+		if (j < 10) {
+			System.out.println();
+			System.out.println("Enter " + (10 - data.size()) + " more numbers.");
+			importer(getInput(), data);
+		}
+	}
+
+	public static ArrayList<Integer> importer(String input, ArrayList<Integer> data) {
+		String[] stringValues = input.split("\\s|\\,");
+		for (int i = 0; i < stringValues.length; i++) {
+			String value = stringValues[i];
+			try {
+				int inputInt = Integer.parseInt(value);
+				data.add(inputInt);
+			} catch (NumberFormatException e) {
+				System.out.println("Try again.");
+			}
+		}
+		more(data);
+		return data;
+	}
+
+	public static String cleaner(String toClean) {
+		String cleanedString = toClean.replaceAll("\\,|\\*|\\(|\\)|\\[|\\]|\\:|\\'|\\^|\\?|\"", " ");
+		cleanedString = cleanedString.replaceAll("\\s{2,}", " ");
+		cleanedString = cleanedString.replaceAll("\\s{2,}", " ");
+		cleanedString = cleanedString.replaceAll("^\\s", "");
+		cleanedString = cleanedString.replaceAll("\\s$", "");
+		return cleanedString;
+	}
+
+	public static ArrayList<Integer> removeDuplicate(ArrayList<Integer> data) {
+
+		for (int k = 0; k < data.size(); k++) {
+			for (int m = 0; m < data.size(); m++) {
+				if (data.get(m) == data.get(k) && k != m) {
+					data.remove(m);
+				}
+			}
+		}
+		data.sort(null);
+		return data;
+	}
+}
+
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class ElevenThirteenTest {
+	private ElevenThirteen classUnderTest;
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+		classUnderTest = new ElevenThirteen();
+	}
+
+	@Test
+	void test() {
+		String input = "34 5 3 5 6 4 33 2 2 4";
+		String answer = "2 3 4 5 6 33 34";
+		String output = ElevenThirteen.testMethod(input);
+		System.out.println(output + "|" + answer);
+		assertTrue(output.matches(answer));
+	}
+}

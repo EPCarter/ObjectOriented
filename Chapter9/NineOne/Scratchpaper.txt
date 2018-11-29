@@ -1,0 +1,137 @@
+import java.util.Scanner;
+
+/**
+ * @author: Erik Carter
+ * @email Carter.Eri7200@stu.stech.edu
+ * @course CSCI 1110 - Object Oriented Programming
+ * @assignment 9-1
+ * @date Oct. 24, 2018
+ * @summary (The Rectangle class) Following the example of the Circle class in
+ *          Section 9.2, design a class named Rectangle to represent a
+ *          rectangle. The class contains:
+ * 
+ *          Two double data fields named width and height that specify the width
+ *          and height of the rectangle. The default values are 1 for both width
+ *          and height. A no-arg constructor that creates a default rectangle. A
+ *          constructor that creates a rectangle with the specified width and
+ *          height. A method named getArea() that returns the area of this
+ *          rectangle. A method named getPerimeter() that returns the perimeter.
+ *          Draw the UML diagram for the class and then implement the class.
+ *          Write a test program that creates two Rectangle objects—one with
+ *          width 4 and height 40 and the other with width 3.5 and height 35.9.
+ *          Display the width, height, area, and perimeter of each rectangle in
+ *          this order.
+ **/
+class NineOne {
+	public static void main(String[] args) {
+		
+	}
+		class Rectangle {
+			double height = 1;
+			double width = 1;
+			double area;
+			double perimeter;
+
+			Rectangle() {
+			}
+
+			Rectangle(double newWidth, double newHeight) {
+				height = newHeight;
+				width = newWidth;
+			}
+
+			double getPerimeter() {
+				return ((height * 2) + (width * 2));
+			}
+
+			double getArea() {
+				return height * width;
+			}
+		}
+	}
+}
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class NineOneTest {
+	private NineOne classUnderTest;
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+		classUnderTest = new NineOne();
+	}
+
+	@Test
+	void test() {
+		Rectangle rectangle1 = new NineOne.Rectangle();
+		printer(rectangle1);
+
+		Rectangle rectangle2 = new NineOne(4, 40) {
+		};
+		printer(rectangle2);
+
+		Rectangle rectangle3 = new NioneOne.Rectangle(3.5, 35.9) {
+		};
+		printer(rectangle3);
+	}
+}
+
+
+public class Rectangle {
+	double height;
+	double width;
+	double area;
+	double perimeter;
+
+	Rectangle() {
+		height = 1;
+		
+	}
+
+	Rectangle(double newWidth, double newHeight) {
+		height = newHeight;
+		width = newWidth;
+	}
+
+	double getPerimeter() {
+		return ((height * 2) + (width * 2));
+	}
+
+	double getArea() {
+		return height * width;
+	}
+
+	void printer(Rectangle rectangle) {
+		double width = rectangle.width;
+		double height = rectangle.height;
+		double area = rectangle.getArea();
+		double perimeter = rectangle.getPerimeter();
+
+		System.out.println("Width: " + width);
+		System.out.println("Height: " + height);
+		System.out.println("Area: " + area);
+		System.out.println("Perimeter: " + perimeter);
+	}
+}
+
+
+
+public class RectangleTest {
+	Rectangle rectangle1 = new Rectangle();
+	// printer(rectangle1);
+
+
+	Rectangle rectangle2 = new Rectangle(4, 40);
+	// printer(rectangle2);
+
+	Rectangle rectangle3 = new Rectangle(3.5, 35.9);
+	// printer(rectangle3);
+}
