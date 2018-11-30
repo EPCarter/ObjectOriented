@@ -1,3 +1,5 @@
+package Chapter10.TenSeven;
+
 import java.util.Scanner;
 
 @SuppressWarnings("resource")

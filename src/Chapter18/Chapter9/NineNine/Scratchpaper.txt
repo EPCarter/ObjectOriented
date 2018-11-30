@@ -1,0 +1,169 @@
+import java.util.Scanner;
+
+/**
+ * @author: Erik Carter
+ * @email Carter.Eri7200@stu.stech.edu
+ * @course CSCI 1110 - Object Oriented Programming
+ * @assignment 9-9
+ * @date Oct. 24, 2018
+ * @summary (Geometry: n-sided regular polygon) In an n-sided regular polygon,
+ *          all sides have the same length and all angles have the same degree
+ *          (i.e., the polygon is both equilateral and equiangular). Design a
+ *          class named RegularPolygon that contains:
+ * 
+ *          A private int data field named n that defines the number of sides in
+ *          the polygon with default value 3.
+ * 
+ *          A private double data field named side that stores the length of the
+ *          side with default value 1.
+ * 
+ *          A private double data field named x that defines the x-coordinate of
+ *          the polygon’s center with default value 0.
+ * 
+ *          A private double data field named y that defines the y-coordinate of
+ *          the polygon’s center with default value 0.
+ * 
+ *          A no-arg constructor that creates a regular polygon with default
+ *          values.
+ * 
+ *          A constructor that creates a regular polygon with the specified
+ *          number of sides and length of side, centered at (0, 0).
+ * 
+ *          A constructor that creates a regular polygon with the specified
+ *          number of sides, length of side, and x- and y-coordinates.
+ * 
+ *          The accessor and mutator methods for all data fields.
+ * 
+ *          The method getPerimeter() that returns the perimeter of the polygon.
+ * 
+ *          The method getArea() that returns the area of the polygon.
+ * 
+ *          The formula for computing the area of a regular polygon is:
+ * 
+ *          Area = (n*s^2) /(4*tan(pi/n))
+ * 
+ *          Draw the UML diagram for the class and then implement the class.
+ * 
+ *          Write a test program that creates two RegularPolygon objects,
+ *          created using the no-arg constructor, using RegularPolygon(6, 4),
+ *          and using RegularPolygon(10, 4, 5.6, 7.8).
+ * 
+ *          For each object, display its perimeter and area.
+ **/
+class NineNine {
+	public static void main(String[] args) {
+
+	}
+
+	public class TestRegularPolygon{
+		RegularPolygon polygon1 = new RegularPolygon(6,4);
+		polygon1.printer();
+		
+		RegularPolygon polygon2 = new RegularPolygon(10,4,5.6,7.8);
+		polygon2.printer();
+	}
+
+	public class RegularPolygon {
+		private int n = 3;
+		private double s = 1;
+		private double x = 0;
+		private double y = 0;
+
+		RegularPolygon() {
+		}
+
+		RegularPolygon(int newN, double newS, double newX, double newY) {
+			n = newN;
+			s = newS;
+			x = newX;
+			y = newY;
+		}
+
+		public double getPerimeter(int n, double s) {
+			double perimeter = n * s;
+			return perimeter;
+		}
+
+		public double getArea(int n, double s) {
+			double area = (n * (s * s)) / (4 * Math.tan(Math.PI / n));
+			return area;
+		}
+
+		public void printer() {
+			System.out.println("Perimeter: " + this.getPerimeter(this.n, this.s));
+			System.out.println("Area: " + this.getArea(this.n, this.s));
+		}
+
+		public void setN() {
+			this.n = Integer.parseInt(getInput());
+		}
+
+		public int getN() {
+			return this.n;
+		}
+
+		public void setS() {
+			this.s = Double.parseDouble(getInput());
+		}
+
+		public double getS() {
+			return this.s;
+		}
+
+		public void setX() {
+			this.x = Double.parseDouble(getInput());
+		}
+
+		public double getX() {
+			return this.x;
+		}
+
+		public void setY() {
+			this.y = Double.parseDouble(getInput());
+		}
+
+		public double getY() {
+			return this.y;
+		}
+
+		public String getInput() {
+			Scanner reader = new Scanner(System.in);
+			String input = reader.nextLine();
+			reader.close();
+			return input;
+		}
+	}
+}
+
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class NineNineTest {
+	private NineNine classUnderTest;
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+		classUnderTest = new NineNine();
+	}
+
+	@Test
+	void test() {
+
+		fail("Not yet implemented");
+	}
+
+	public class TestRectangle {
+		public static void main(String[] args) {
+			Rectangle rectangle1 = new Rectangle();
+			System.out.println("Area: " + rectangle1.getArea());
+		}
+	}
+}

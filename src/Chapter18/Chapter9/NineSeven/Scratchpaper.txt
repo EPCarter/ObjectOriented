@@ -1,0 +1,232 @@
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+
+/**
+ * @author: Erik Carter
+ * @email Carter.Eri7200@stu.stech.edu
+ * @course CSCI 1110 - Object Oriented Programming
+ * @assignment 9-7
+ * @date Oct. 24, 2018
+ * @summary (The Account class) Design a class named Account that contains:
+ * 
+ *          A private int data field named id for the account (default 0). A
+ *          private double data field named balance for the account (default 0).
+ *          A private double data field named annualInterestRate that stores the
+ *          current interest rate (default 0). Assume all accounts have the same
+ *          interest rate. A private Date data field named dateCreated that
+ *          stores the date when the account was created. A no-arg constructor
+ *          that creates a default account. A constructor that creates an
+ *          account with the specified id and initial balance. The accessor and
+ *          mutator methods for id, balance, and annualInterestRate. The
+ *          accessor method for dateCreated. A method named
+ *          getMonthlyInterestRate() that returns the monthly interest rate. A
+ *          method named getMonthlyInterest() that returns the monthly interest.
+ *          A method named withdraw() that withdraws a specified amount from the
+ *          account. A method named deposit() that deposits a specified amount
+ *          to the account.
+ * 
+ *          Draw the UML diagram for the class and then implement the class.
+ * 
+ *          (Hint: The method getMonthlyInterest() is to return monthly
+ *          interest, not the interest rate. Monthly interest is balance *
+ *          monthlyInterestRate. monthlyInterestRate is annualInterestRate / 12.
+ *          Note that annualInterestRate is a percentage, e.g., like 4.5%. You
+ *          need to divide it by 100.)
+ * 
+ *          Write a test program that creates an Account object with an account
+ *          ID of 1122, a balance of $20,000, and an annual interest rate of
+ *          4.5%. Use the withdraw method to withdraw $2,500, use the deposit
+ *          method to deposit $3,000, and print the balance, the monthly
+ *          interest, and the date when this account was created.
+ **/
+class NineSeven {
+	public static void main(String[] args) {
+
+	}
+
+	/**
+	 * This is the account that holds the ID, balance, annual interest rate, and
+	 * date created
+	 */
+
+	public class TestAccount {
+		Account account1 = new Account(1122, 20000.00, 4.5, Calendar.getInstance());
+		// account1.withdraw(2500);
+		// account1.deposit(3000);
+		// account1.monthlyInterest();
+		// account1.dateCreated();
+	}
+
+	public class Account {
+		private int id = 0;
+		private double balance = 0;
+		private double annualInterestRate = 0;
+		private Calendar dateCreated = Calendar.getInstance(); // current nanoseconds since 1970
+
+		Account() {
+		}
+
+		Account(int newID, double newBalance, double newAnnualInterestRate, Calendar newDateCreated) {
+			id = newID;
+			balance = newBalance;
+			annualInterestRate = newAnnualInterestRate;
+			dateCreated = newDateCreated;
+		}
+
+		/**
+		 * This method grabs the date the account was created
+		 * 
+		 * @return it is returned as nanoseconds since 1970
+		 */
+		public Calendar dateCreatedAccessor() {
+			Calendar dateCreated = this.dateCreated;
+			return dateCreated;
+		}
+
+		/**
+		 * This method accesses the account ID
+		 * 
+		 * @return ID is returned as an int
+		 */
+		public int idAccessor() {
+			int idAccessor = this.id;
+			return idAccessor;
+		}
+
+		/**
+		 * This method accesses the account balance
+		 * 
+		 * @return Balance is returned as a double
+		 */
+		public double balanceAccessor() {
+			double balance = this.balance;
+			return balance;
+		}
+
+		/**
+		 * This method accesses the account annual interest rate
+		 * 
+		 * @return Interest rate is returned as a double
+		 */
+		public double annualInterestRateAccessor() {
+			double annualInterestRate = this.annualInterestRate;
+			return annualInterestRate;
+		}
+
+		/**
+		 * This method sets the ID
+		 */
+		public void setId() {
+			System.out.println("ID: ");
+			this.id = Integer.parseInt(getInput());
+		}
+
+		/**
+		 * This method sets the account balance
+		 */
+		public void setBalance() {
+			System.out.println("ID: ");
+			this.balance = Double.parseDouble(getInput());
+		}
+
+		/**
+		 * This method sets the annual interest
+		 */
+		public void setAnnualInterestRate() {
+			System.out.println("Annual Interest Rate: ");
+			this.annualInterestRate = Double.parseDouble(getInput());
+		}
+
+		/**
+		 * This method gets the monthly interest rate
+		 * 
+		 * @return Monthly interest rate is returned as a double
+		 */
+		public double getMonthlyInterestRate() {
+			return this.annualInterestRate / 12;
+		}
+
+		/**
+		 * This method withdraws from the account
+		 * 
+		 * @return it returns the new balance as a double
+		 */
+		public void withdraw(double ammount) {
+			// this.balance = balance - Double.parseDouble(getInput());
+			this.balance = this.balance - ammount;
+			System.out.println("Balance: $" + this.balance);
+		}
+
+		/**
+		 * This method deposits into the account
+		 * 
+		 * @return The new balance is returned as a double
+		 */
+		public void deposit(double ammount) {
+			this.balance = this.balance + ammount;
+			// this.balance = balance + Double.parseDouble(getInput());
+			System.out.println("Balance: $" + this.balance);
+		}
+
+		/**
+		 * This method gets the monthly interest
+		 * 
+		 * @return Monthly interest is returned as a double
+		 */
+		public void getMonthlyInterest() {
+			System.out.println(this.balance * getMonthlyInterestRate());
+		}
+
+		/**
+		 * This is the UML
+		 */
+
+	}
+
+	/**
+	 * This method gets the input from the user
+	 * 
+	 * @return it returns the input as a String
+	 */
+	public static String getInput() {
+		Scanner reader = new Scanner(System.in);
+		String input = reader.nextLine();
+		reader.close();
+		return input;
+	}
+}
+
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class NineSevenTest {
+	private NineSeven classUnderTest;
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+		classUnderTest = new NineSeven();
+	}
+
+	@Test
+	void test() {
+		int id = 1122;
+		double balance = 20000;
+		double annualInterestRate = .045;
+		double withdraw = 2500;
+		double deposit = 3000;
+		long dateCreated = 0;
+		double monthlyInterest = 0;
+		System.out.println("Balance: $" + balance);
+		System.out.println("Monthly Interest: $" + monthlyInterest);
+		System.out.println("Date Created: " + dateCreated);
+	}
+}
