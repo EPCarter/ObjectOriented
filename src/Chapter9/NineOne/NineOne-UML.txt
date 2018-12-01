@@ -1,0 +1,22 @@
+
+Rectangle
+---------------
+width: double
+length: double
+---------------
+Rectangle()
+Rectangle(newWidth: double, newHeight: double)
+getArea(): double
+getPerimeter(): double
+printer():void
+
+
+RectangleTest
+--------------------
+rectangle1:Rectangle
+width=4
+height=40
+
+rectangle2:Rectangle
+width=3.5
+height=35.9

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package Chapter9.NineOne;
 
 /**
  * @author: Erik Carter
@@ -23,7 +23,32 @@ import java.util.Scanner;
  *          this order.
  **/
 class Rectangle {
-	public static void main(String[] args) {
+	double height = 1;
+	double width = 1;
+	double area;
+	double perimeter;
 
+	Rectangle() {
+	}
+
+	Rectangle(double newWidth, double newHeight) {
+		height = newHeight;
+		width = newWidth;
+	}
+
+	double getPerimeter() {
+		return ((height * 2) + (width * 2));
+	}
+
+	double getArea() {
+		return height * width;
+	}
+
+	public void printer() {
+		System.out.println("Width: " + this.width);
+		System.out.println("Height: " + this.height);
+		System.out.println("Area: " + this.getArea());
+		System.out.println("Perimeter: " + this.getPerimeter());
+		System.out.println();
 	}
 }

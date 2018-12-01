@@ -1,3 +1,5 @@
+package Chapter12.TwelveThree;
+
 import java.util.Random;
 import java.util.Scanner;
 

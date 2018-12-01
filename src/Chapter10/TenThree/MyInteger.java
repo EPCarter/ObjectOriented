@@ -41,7 +41,77 @@ package Chapter10.TenThree;
  * 
  *          Write a client program that tests all methods in the class.
  **/
-class TenThree {
-	public static void main(String[] args) {
+class MyInteger {
+	int value;
+
+	MyInteger(int valueGiven) {
+		value = valueGiven;
+	}
+
+	public int getValue() {
+		return this.value;
+	}
+
+	public boolean isEven() {
+
+		if (this.value % 2 == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean isOdd() {
+		if (this.value % 2 == 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public boolean isPrime() {
+		int i = 2;
+		int count = 0;
+		boolean isPrime = false;
+		while (i < this.value) {
+			if (this.value % i == 0) {
+				count++;
+				i++;
+			} else {
+				i++;
+			}
+			if (count == 0) {
+				isPrime = true;
+			} else {
+				isPrime = false;
+			}
+		}
+		System.out.println("Divisors: " + count);
+		return isPrime;
+	}
+
+	public boolean equals(MyInteger integer2) {
+		if (integer2.value == this.value) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean equals(int compareTo) {
+		if (this.value == compareTo) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	static int parseInt(char[] charArray) {
+		String charString = new String(charArray);
+		return Integer.parseInt(charString);
+	}
+
+	static int parseInt(String someString) {
+		return Integer.parseInt(someString);
 	}
 }

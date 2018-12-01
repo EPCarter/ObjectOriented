@@ -1,3 +1,5 @@
+package Chapter9.NineSeven;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
@@ -41,7 +43,71 @@ import java.util.Scanner;
  *          interest, and the date when this account was created.
  **/
 class Account {
-	public static void main(String[] args) {
+	private int id = 0;
+	private double balance = 0;
+	private double annualInterestRate = 0;
+	Calendar dateCreated;
 
+	Account() {
+	}
+
+	Account(int newID, double newBalance, double newAnnualInterestRate, Calendar newDateCreated) {
+		id = newID;
+		balance = newBalance;
+		annualInterestRate = newAnnualInterestRate;
+		dateCreated = newDateCreated;
+	}
+
+	public String getDateCreated() {
+		java.util.Date date1 = new java.util.Date();
+		return date1.toString();
+	}
+
+	public int idAccessor() {
+		int idAccessor = this.id;
+		return idAccessor;
+	}
+
+	public double balanceAccessor() {
+		double balance = this.balance;
+		return balance;
+	}
+
+	public double annualInterestRateAccessor() {
+		double annualInterestRate = this.annualInterestRate;
+		return annualInterestRate;
+	}
+
+	public void setId(int givenID) {
+		System.out.println("ID: ");
+		this.id = givenID;
+	}
+
+	public void setBalance(double givenBalance) {
+		System.out.println("Balance Set: ");
+		this.balance = givenBalance;
+	}
+
+	public void setAnnualInterestRate(double givenAnnualInterestRate) {
+		System.out.println("Annual Interest Rate Set: ");
+		this.annualInterestRate = givenAnnualInterestRate;
+	}
+
+	public double getMonthlyInterestRate() {
+		return this.annualInterestRate / 12;
+	}
+
+	public void withdraw(double ammount) {
+		this.balance = this.balance - ammount;
+		System.out.println("$" + ammount + " withdrawn. New Balance: $" + this.balance);
+	}
+
+	public void deposit(double ammount) {
+		this.balance = this.balance + ammount;
+		System.out.println("$" + ammount + " deposited. New Balance: $" + this.balance);
+	}
+
+	public void getMonthlyInterest() {
+		System.out.println(this.balance * getMonthlyInterestRate());
 	}
 }

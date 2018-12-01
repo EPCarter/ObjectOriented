@@ -1,8 +1,8 @@
 package Chapter10.TenSeven;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
-@SuppressWarnings("resource")
 /**
  * @author: Erik Carter
  * @email Carter.Eri7200@stu.stech.edu
@@ -24,6 +24,86 @@ import java.util.Scanner;
  *          the system starts, it will not stop.
  **/
 class Atm {
+	private int id = 0;
+	private double balance = 0;
+	private double annualInterestRate = 0;
+	Calendar dateCreated;
+
+	Atm() {
+	}
+
+	Atm(int newID, double newBalance, double newAnnualInterestRate, Calendar newDateCreated) {
+		id = newID;
+		balance = newBalance;
+		annualInterestRate = newAnnualInterestRate;
+		dateCreated = newDateCreated;
+	}
+
+	public String getDateCreated() {
+		java.util.Date date1 = new java.util.Date();
+		return date1.toString();
+	}
+
+	public int idAccessor() {
+		int idAccessor = this.id;
+		return idAccessor;
+	}
+
+	public double balanceAccessor() {
+		double balance = this.balance;
+		return balance;
+	}
+
+	public double annualInterestRateAccessor() {
+		double annualInterestRate = this.annualInterestRate;
+		return annualInterestRate;
+	}
+
+	public void setId(int givenID) {
+		System.out.println("ID: ");
+		this.id = givenID;
+	}
+
+	public void setBalance(double givenBalance) {
+		System.out.println("Balance Set: ");
+		this.balance = givenBalance;
+	}
+
+	public void setAnnualInterestRate(double givenAnnualInterestRate) {
+		System.out.println("Annual Interest Rate Set: ");
+		this.annualInterestRate = givenAnnualInterestRate;
+	}
+
+	public double getMonthlyInterestRate() {
+		return this.annualInterestRate / 12;
+	}
+
+	public void withdraw(double ammount) {
+		this.balance = this.balance - ammount;
+		System.out.println("$" + ammount + " withdrawn. New Balance: $" + this.balance);
+	}
+
+	public void deposit(double ammount) {
+		this.balance = this.balance + ammount;
+		System.out.println("$" + ammount + " deposited. New Balance: $" + this.balance);
+	}
+
+	public void getMonthlyInterest() {
+		System.out.println(this.balance * getMonthlyInterestRate());
+	}
+}
+
+
+public class AtmTest {
 	public static void main(String[] args) {
+		Atm account1 = new Atm(1122, 20000.00, 4.5, Calendar.getInstance());
+		System.out.println("ID: " + account1.idAccessor() + " - Balance: $" + account1.balanceAccessor()
+				+ " - Annual Interest: " + account1.annualInterestRateAccessor() + "% - Monthly Interest:"
+				+ account1.getMonthlyInterestRate() + "% - Date Opened: " + account1.dateCreated);
+		account1.withdraw(2500);
+		account1.deposit(3000);
+		System.out.println("Monthly Interest: " + (account1.getMonthlyInterestRate() * 10) + "%");
+		System.out.println("Account Created on: " + account1.getDateCreated());
+		System.out.println("Currrent Balance: $" + account1.balanceAccessor());
 	}
 }

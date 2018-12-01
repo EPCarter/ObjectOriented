@@ -24,7 +24,7 @@ import java.util.Scanner;
 
 @SuppressWarnings("resource")
 
-public class ElevenThirteen {
+public class RemoveDuplicates {
 	public static void main(String[] args) {
 	}
 }

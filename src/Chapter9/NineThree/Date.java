@@ -1,4 +1,5 @@
-import java.util.Date;
+package Chapter9.NineThree;
+import java.util.Date.*;
 
 /**
  * @author: Erik Carter
@@ -12,24 +13,14 @@ import java.util.Date;
  *          the date and time using the toString() method, respectively.
  **/
 class Date {
-	public static void main(String[] args) {
-		Date date1 = new Date();
-		date1.setTime(10000);
-		System.out.println(date1.toString());
-		date1.setTime(100000);
-		System.out.println(date1.toString());
-		date1.setTime(1000000);
-		System.out.println(date1.toString());
-		date1.setTime(10000000);
-		System.out.println(date1.toString());
-		date1.setTime(100000000);
-		System.out.println(date1.toString());
-		date1.setTime(1000000000);
-		System.out.println(date1.toString());
-		date1.setTime(1000000000);
-		System.out.println(date1.toString());
+	long time;
 
-		// date1.setTime(10000000000);
-		System.out.println(date1.toString());
+	void setTime(long timeGiven) {
+		time = timeGiven;
 	}
+
+		void getTime() {
+		System.out.println(this.time.toString());
+		}
+	
 }

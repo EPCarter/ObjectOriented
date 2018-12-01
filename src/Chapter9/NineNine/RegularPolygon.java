@@ -1,3 +1,5 @@
+package Chapter9.NineNine;
+
 import java.util.Scanner;
 
 /**
@@ -52,8 +54,77 @@ import java.util.Scanner;
  **/
 
 class RegularPolygon {
-	public static void main(String[] args) {
+	private int n = 3;
+	private double s = 1;
+	private double x = 0;
+	private double y = 0;
 
+	RegularPolygon() {
 	}
 
+	RegularPolygon(int newN, double newS) {
+		n = newN;
+		s = newS;
+	}
+
+	RegularPolygon(int newN, double newS, double newX, double newY) {
+		n = newN;
+		s = newS;
+		x = newX;
+		y = newY;
+	}
+
+	public double getPerimeter(int n, double s) {
+		double perimeter = n * s;
+		return perimeter;
+	}
+
+	public double getArea(int n, double s) {
+		double area = (n * (s * s)) / (4 * Math.tan(Math.PI / n));
+		return area;
+	}
+
+	public void printer() {
+		System.out.println("Perimeter: " + this.getPerimeter(this.n, this.s));
+		System.out.println("Area: " + this.getArea(this.n, this.s));
+	}
+
+	public void setN() {
+		this.n = Integer.parseInt(getInput());
+	}
+
+	public int getN() {
+		return this.n;
+	}
+
+	public void setS() {
+		this.s = Double.parseDouble(getInput());
+	}
+
+	public double getS() {
+		return this.s;
+	}
+
+	public void setX() {
+		this.x = Double.parseDouble(getInput());
+	}
+
+	public double getX() {
+		return this.x;
+	}
+
+	public void setY() {
+		this.y = Double.parseDouble(getInput());
+	}
+
+	public double getY() {
+		return this.y;
+	}
+
+	public String getInput() {
+		Scanner reader = new Scanner(System.in);
+		String input = reader.nextLine();
+		reader.close();
+		return input;
+	}
 }
